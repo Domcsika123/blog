@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Férfi fodrászat: Az igényes férfi választása</title>
+  <meta
+    name="description"
+    content="Férfi fodrászat Budapest, férfi hajvágás, hajtrendek, szakállápolás és igényes megjelenés – stílusos férfi fodrászat egy helyen."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(42px, 5vw, 74px);
+    }
+
+    h2 {
+      font-size: clamp(34px, 3vw, 48px);
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn--light {
+      background: var(--white);
+      color: var(--dark);
+      border: 1px solid var(--white);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.32);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .side-card {
+      border-radius: 30px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .side-card--image {
+      background: url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80") center center / cover no-repeat;
+      border: none;
+      box-shadow: none;
+    }
+
+    .side-card--content {
+      padding: 34px 30px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .side-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .side-card--content h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      margin-bottom: 0;
+    }
+
+    .side-card--content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .key-points {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .key-points li {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .key-points li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .blog-shell {
+      padding: 24px 0 96px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section p {
+      margin: 0 0 18px;
+      font-size: 17px;
+      color: #2b2724;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .section-image {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin: 0 0 28px;
+      background: #f7f1e9;
+    }
+
+    .editorial-note {
+      margin: 26px 0 4px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .feature-list,
+    .simple-list,
+    .toc {
+      padding-left: 22px;
+    }
+
+    .feature-list li,
+    .simple-list li,
+    .key-points li,
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .trend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .trend-img {
+      overflow: hidden;
+      border-radius: 14px;
+      height: 220px;
+      margin-bottom: 12px;
+    }
+
+    .trend-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.15);
+      display: block;
+    }
+
+    .trend-item h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .trend-item p {
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .trend-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 28px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .toc {
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: var(--text);
+      transform: translateX(2px);
+    }
+
+    .sidebar-note {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 14px;
+    }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .final-cta p {
+      max-width: 760px;
+      margin: 0 0 24px;
+      color: rgba(255,255,255,0.78);
+      font-size: 17px;
+    }
+
+    .final-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer {
+      padding: 40px 0 56px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .hero-main {
+        min-height: 580px;
+        border-radius: 22px;
+      }
+
+      .hero-content {
+        padding: 28px;
+      }
+
+      .side-card,
+      .final-cta {
+        border-radius: 22px;
+      }
+
+      .section-image {
+        height: 300px;
+      }
+
+      .final-cta {
+        padding: 26px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 18px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero-lead,
+      .section p,
+      .section-intro {
+        font-size: 16px;
+      }
+
+      .btn,
+      .sidebar-cta {
+        width: 100%;
+      }
+
+      .hero-actions,
+      .final-cta__actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+            <div class="hero-content">
+              <div class="eyebrow">Férfi fodrászat • stílusos megjelenés • Budapest</div>
+              <h1>Férfi fodrászat: Az igényes férfi választása.</h1>
+              <p class="hero-lead">
+                Nem minden hajvágás egyforma – és ezt pontosan tudja az, aki egyszer már járt egy igazán jó férfi fodrászatnál. Precíz vonalak, személyre szabott frizura, profi szakállápolás. Ez az a különbség, amit azonnal megérez az ember.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+                <a href="/idopontfoglalas" class="btn btn--ghost">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="side-card side-card--content">
+              <div class="side-label">Fodrász szemlélet</div>
+              <h2>Letisztult megjelenés, precíz részletek</h2>
+              <p>
+                A férfi hajvágás akkor működik igazán, ha a frizura, a szakáll és az arc vonásai összhangban vannak. Egy tapasztalt férfi fodrász ezt nem a véletlenre bízza – hanem tudatosan alakítja ki a számodra legjobb összképet.
+              </p>
+
+              <ul class="key-points">
+                <li>Arcformához igazított férfi frizura</li>
+                <li>Precíz kontúrvágás és szakálligazítás</li>
+                <li>Modern hajvágási technikák, időtálló eredménnyel</li>
+              </ul>
+            </div>
+
+            <div class="side-card side-card--image"></div>
+          </div>
+        </div>
+    </section>
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section" id="miert-fontos">
+              <h2>Miért fontos a jó férfi fodrász?</h2>
+
+              <p class="section-intro">
+                Sokan alábecsülik, mennyit számít egy igazán jó férfi fodrász. Nem csak a hajról van szó – hanem arról, hogy hogyan nézel ki reggel a tükörben, hogyan érzed magad egy fontos megbeszélésen, vagy épp egy randira menet.
+              </p>
+
+              <p>
+                Egy profi férfi fodrász nem csak vág. Figyeli az arcformádat, a haj növekedési irányát, a sűrűséget, és azt is, hogy a végeredmény két látogatás között is rendezett maradjon.
+              </p>
+
+              <p>
+                A legjobb budapesti férfi fodrászatoknál ma már nem csak fade hajvágást vagy kontúrvágást kapsz – hanem egy teljes megjelenés-konzultációt, ahol a frizura és a szakáll együtt kerül kialakításra. Ez az, amit egy átlagos fodrász nem tud nyújtani.
+              </p>
+
+              <div class="editorial-note">
+                <strong>Egy rosszul sikerült hajvágás hetekig tart. Egy jó fodrász munkája viszont nap mint nap magabiztosabbá tesz – és ezt az emberek észreveszik rajtad.</strong>
+              </div>
+
+              <ul class="feature-list">
+                <li>Arcformához igazított férfi frizura és szakáll</li>
+                <li>Egységes, összehangolt végeredmény</li>
+                <li>Kevesebb napi igazítás</li>
+                <li>Természetes, mégis erős összhatás</li>
+              </ul>
+            </section>
+
+            <section class="section" id="trendek">
+              <h2>Legnépszerűbb férfi hajtrendek 2026-ban</h2>
+
+              <p>
+                A férfi frizurák világa sokat változott az elmúlt években. Ma már nem elég egy sima gépi vágás – az emberek tudják, mit akarnak, és pontosan azt is kérik. Nézzük, melyek a legtöbbet keresett férfi hajtrendek most.
+              </p>
+
+              <div class="trend-grid">
+                <div class="trend-item">
+                  <div class="trend-img"><img src="mullet.jpg?v=2" alt="Mullet frizura" /></div>
+                  <h3>Mullet</h3>
+                  <p>A 80-as évek klasszikusa teljesen megújult. Már nem a drasztikus különbségről szól, hanem egy lágyabb átmenetről: oldalt rövidebb, hátul pedig karakteresen hosszabb, de igényesen vágott.</p>
+                </div>
+
+                <div class="trend-item">
+                  <div class="trend-img"><img src="crop.jpg" alt="Crop frizura" /></div>
+                  <h3>Crop</h3>
+                  <p>Ez a frizura évek óta trónol, és 2026-ban is a legnépszerűbb választás. Az oldalt rövidre nyírt (gyakran skin fade-del kombinált) részekhez egy tépett, előrefésült felső rész társul.</p>
+                </div>
+
+                <div class="trend-item">
+                  <div class="trend-img"><img src="fade.jpg?v=4" alt="Fade hajvágás" /></div>
+                  <h3>Fade</h3>
+                  <p>Skin fade, taper fade, high fade – mindegyik más hatást ad, de a lényeg ugyanaz: tiszta átmenet, ami azonnal emeli az összképet. Időtálló alapja szinte bármilyen frizurának.</p>
+                </div>
+
+                <div class="trend-item">
+                  <div class="trend-img"><img src="buzz.jpg" alt="Buzz cut" /></div>
+                  <h3>Buzz cut</h3>
+                  <p>A legtisztább és legmaszkulinabb trend. Idén nem csak egyszerűen rövidre nyírják a hajat, hanem precíz, bőrig hatoló átmenettel (skin fade) és éles kontúrokkal teszik modernné.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section" id="szakall">
+              <h2>Szakállápolás: a részlet, ami teljesebbé teszi a megjelenést</h2>
+
+              <p>
+                Sokan elhanyagolják a szakállt, pedig ez az egyik legnagyobb hiba, amit egy férfi elkövethet a megjelenésével kapcsolatban. Egy rendezett, jól formázott szakáll szinte azonnal komolyabbá, tudatosabbá teszi az összképet – legyen szó rövidebb borostáról vagy hosszabb szakállról.
+              </p>
+
+              <p>
+                A professzionális szakállformázás nem csak a hossz beállításáról szól. A nyakvonal, a pofaszakáll kontúrja, a szakáll és a haj aránya – ezek finomhangolása teszi igazán igényessé az eredményt.              </p>
+
+              <ul class="simple-list">
+                <li>Rendszeres szakálligazítás megőrzi a tiszta, rendezett formát</li>
+                <li>Szakállolaj és minőségi ápolószerek puhítják és rendezik a szőrzetet</li>
+                <li>A hajjal harmonizáló szakáll prémiumabb, egységesebb végeredményt ad</li>
+                <li>Még a rövid borostánál is sokat számít a precíz kontúrvágás</li>
+              </ul>
+            </section>
+
+            <section class="section" id="valasztas">
+              <img
+                src="kep7.webp"
+                alt="Professzionális szakálligazítás"
+                class="section-image"
+              />
+
+              <h2>Hogyan válassz férfi fodrászatot Budapesten?</h2>
+
+              <p>
+                Budapest tele van férfi fodrászatokkal – de köztük óriási a különbség. Nem elég, hogy valaki olcsó legyen vagy közel legyen hozzád. Az igazán jó férfi fodrászatot az különbözteti meg, hogy oda visszamész, mert minden alkalommal ugyanolyan jó eredményt kapsz.
+              </p>
+
+              <p>
+                Mire figyelj, amikor férfi fodrászatot keresel? Nézd meg a referenciáikat – Instagram, Google vélemények, személyes ajánlás. Egy profi férfi fodrászat nem fél megmutatni a munkáit. Ha az oldalukon csak stockfotók vannak, az már önmagában árulkodó.
+              </p>
+
+              <ul class="feature-list">
+                <li>Valódi, saját referenciafotók és Google értékelések</li>
+                <li>Konzultáció vágás előtt – nem rögtön a gép</li>
+                <li>Rendezett, letisztult szalon környezet</li>
+                <li>Következetes minőség minden látogatásnál</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>A legjobb férfi fodrászat nem az, ahol a leggyorsabb a vágás – hanem ahol úgy érzed, hogy valaki tényleg odafigyelt rád.</strong>
+              </div>
+            </section>
+
+            <section class="section" id="gyakorisag">
+              <h2>Milyen gyakran érdemes visszajárni a fodrászhoz?</h2>
+
+              <p>
+                Ez az egyik leggyakrabban feltett kérdés – és az őszinte válasz az, hogy attól függ, milyen frizurát hordasz. Egy fade gyorsan megnő, és már 2-3 hét után látszik, hogy "kinőtted". Egy hosszabb stílusnál van több mozgástér, de a rendszeresség ott is sokat számít.
+              </p>
+
+              <ul class="simple-list">
+                <li>Fade és skin fade hajvágás: 2–3 hetente ajánlott</li>
+                <li>Klasszikus rövidebb férfi frizura: 3–5 hetente</li>
+                <li>Szakálligazítás és kontúrvágás: 1–3 hetente</li>
+              </ul>
+
+              <p>
+                A legjobb megoldás: foglalj előre visszatérő időpontot a fodrászodhoz. Így sosem csúszol el, és mindig friss marad a megjelenésed – nem csak akkor, amikor már muszáj.
+              </p>
+            </section>
+
+            <section class="section" id="otthoni">
+              <img
+                src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80"
+                alt="Férfi hajformázás tükör előtt styling közben"
+                class="section-image"
+              />
+
+              <h2>Otthoni hajápolás: mitől marad jó a frizura két látogatás között?</h2>
+
+              <p>
+                A fodrászatnál töltött 45 perc csak az alap – a többi rajtad múlik. Az otthoni hajápolás nem kell, hogy bonyolult legyen, de néhány alapdolog betartásával sokat megőrizhetsz abból a friss, rendezett hatásból, amit a vágás után éreztél.
+              </p>
+
+              <ul class="simple-list">
+                <li>Használj hajtípusodhoz való sampont – a "2 az 1-ben" nem barátod</li>
+                <li>Hajformázóból elég kevés: mogyorónyi wax vagy pomádé általában bőven elég</li>
+                <li>Szárítás közben irányítsd a hajat – ez adja a formát, nem a gél</li>
+                <li>Ne várd meg, amíg teljesen kinő – a rendszeres vágás könnyebb, mint a helyreállítás</li>
+              </ul>
+            </section>
+
+            <section class="final-cta">
+              <h2>Készen állsz egy igazán jó hajvágásra?</h2>
+
+              <p>
+                Ha eddig még nem találtad meg a saját férfi fodrászatodat Budapesten – most itt az ideje. Egy jó hajvágás, precíz szakálligazítás és egy fodrász, aki tényleg odafigyel: ennyi kell ahhoz, hogy másnap jobban érezd magad a bőrödben. Foglalj időpontot, és tapasztald meg te is a különbséget.
+              </p>
+
+              <div class="final-cta__actions">
+                <a href="/idopontfoglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="/kapcsolat" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#miert-fontos">Miért fontos a jó férfi fodrász?</a></li>
+                <li><a href="#trendek">Legnépszerűbb férfi hajtrendek</a></li>
+                <li><a href="#szakall">Szakállápolás</a></li>
+                <li><a href="#valasztas">Hogyan válassz férfi fodrászatot?</a></li>
+                <li><a href="#gyakorisag">Milyen gyakran érdemes visszajárni?</a></li>
+                <li><a href="#otthoni">Otthoni ápolás</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Egy jól időzített frissítés sokszor többet számít, mint egy teljes stílusváltás.
+              </p>
+              <a href="/idopontfoglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Letisztult stílus. Precíz részletek. Igényes férfi fodrászat.
+  </footer>
+</body>
+</html>
