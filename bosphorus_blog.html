@@ -498,6 +498,16 @@
         flex-direction: column;
       }
     }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -733,5 +743,21 @@
   <footer class="footer">
     Letisztult stílus. Precíz részletek. Igényes férfi fodrászat.
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.section, .trend-item, .side-card, .sidebar-card, .final-cta').forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
