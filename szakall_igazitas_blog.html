@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Szakálligazítás – hogyan tartsd stílusosan a férfi arcszőrzeted?</title>
+  <meta
+    name="description"
+    content="Szakálligazítás Budapesten – profi szakállformázás, személyre szabott stílus és minőségi ápolás a Bosphorus barber shopban. Tudj meg mindent a tökéletes szakáll titkáról."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 0; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 5vw, 74px); }
+    h2 { font-size: clamp(34px, 3vw, 48px); }
+    h3 { font-size: 24px; margin: 28px 0 8px; }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn--light { background: var(--white); color: var(--dark); border: 1px solid var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.32); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .blog-shell { padding: 24px 0 96px; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content { min-width: 0; }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .section p { margin: 0 0 18px; font-size: 17px; color: #2b2724; }
+    .section-intro { max-width: 760px; font-size: 18px; color: var(--muted); }
+
+    .section-image {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin: 0 0 28px;
+    }
+
+    .editorial-note {
+      margin: 26px 0 18px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .feature-list, .simple-list, .toc { padding-left: 22px; }
+    .feature-list li, .simple-list li, .toc li { margin-bottom: 8px; }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .steps li strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .steps li span {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .sidebar { position: sticky; top: 28px; display: grid; gap: 18px; }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 { font-size: 26px; margin: 0 0 14px; }
+
+    .toc { margin: 0; display: grid; gap: 10px; }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover { color: var(--text); transform: translateX(2px); }
+
+    .sidebar-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 16px; color: var(--white); }
+    .final-cta p { max-width: 760px; margin: 0 0 24px; color: rgba(255,255,255,0.78); font-size: 17px; }
+    .final-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-main { min-height: 100svh; }
+      .hero-content { padding: 28px; }
+      .final-cta { border-radius: 22px; padding: 26px; }
+      .section-image { height: 260px; }
+    }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 38px; }
+      .hero-lead, .section p, .section-intro { font-size: 16px; }
+      .btn, .sidebar-cta { width: 100%; }
+      .hero-actions, .final-cta__actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <div class="eyebrow">Szakálligazítás • férfi grooming • Bosphorus barber shop</div>
+            <h1>Szakálligazítás – hogyan tartsd stílusosan a férfi arcszőrzeted?</h1>
+            <p class="hero-lead">
+              A szakáll nem csak divat, hanem a férfi megjelenés egyik legerőteljesebb eleme. Egy jól ápolt, precízen formázott szakáll karaktert ad, hangsúlyozza az arc vonásait – és azonnal emeli az összképet.
+            </p>
+            <div class="hero-actions">
+              <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--ghost">Időpontfoglalás</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section fade-up" id="miert-fontos">
+              <h2>Miért érdemes szakállat barber shopban igazíttatni?</h2>
+
+              <p class="section-intro">
+                Bár otthon is próbálkozhatsz formázással, a házilagos szakálligazítás gyakran pontatlan, és a végeredmény kevésbé harmonikus lehet. Egy profi borbélynál viszont egészen más szintű eredményt kapsz – és ezt az első alkalom után azonnal érzed.
+              </p>
+
+              <p>
+                A szakáll igazítás során a borbély nem csak a vonalakat formálja. Figyelembe veszi az arcformádat, a hajtípusodat, a szakáll sűrűségét és azt is, hogy milyen stílust viselsz a mindennapokban. Ez különösen fontos, ha a klasszikus formák mellett modern, trendi megjelenést is szeretnél.
+              </p>
+
+              <div class="editorial-note">
+                <strong>A Bosphorus barber shop szakemberei a belvárosban minden vendég számára személyre szabott megoldást kínálnak – legyen szó rövid borostáról, hosszú szakállról, sűrű vagy ritkább arcszőrzetről.</strong>
+              </div>
+
+              <ul class="feature-list">
+                <li>A szakáll formáját az arcodhoz igazítják</li>
+                <li>A hosszúságot és sűrűséget a stílusodhoz szabják</li>
+                <li>Precíz nyakvonal és kontúrvágás</li>
+                <li>Az eredmény mindig egyenletes, rendezett és szimmetrikus</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="lepesek">
+              <img
+                src="szakall.webp"
+                alt="Professzionális szakállformázás barber shopban"
+                class="section-image"
+              />
+
+              <h2>Szakállformázás lépésről lépésre</h2>
+
+              <p>
+                Egy profi barber shopban a szakálligazítás mindig jól strukturált folyamat – nem csak egy gyors átfutás a géppel. Minden lépés a végeredményt szolgálja.
+              </p>
+
+              <ol class="steps">
+                <li>
+                  <div>
+                    <strong>Tisztítás és előkészítés</strong>
+                    <span>A szakáll megtisztítása és lágyítása, hogy könnyen formázható legyen. Meleg törülköző, minőségi termékek.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Formázás és körvonalak kialakítása</strong>
+                    <span>A vonalak és kontúrok precíz kialakítása az arc formájához és a kívánt stílushoz igazítva.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Igazítás és simítás</strong>
+                    <span>Egyenletes hossz, szimmetria ellenőrzése, a természetes esés kiemelése – ollóval és géppel egyaránt.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Ápolás</strong>
+                    <span>Minőségi szakállolajok és balzsamok használata a puhaságért, fényért és az egészséges megjelenésért.</span>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section class="section fade-up" id="tippek">
+              <img
+                src="https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=1600&q=80"
+                alt="Férfi szakállápolás otthon"
+                class="section-image"
+              />
+
+              <h2>Tippek a hosszú távú otthoni ápoláshoz</h2>
+
+              <p>
+                A barber shopban elvégzett szakálligazítás csak akkor tartja meg a formáját, ha otthon is megfelelően ápolt a szakállad. Néhány egyszerű, de hatékony szokással heteken át friss és rendezett maradhat az eredmény.
+              </p>
+
+              <ul class="simple-list">
+                <li>Használj szakállolajat minden mosás után – ez tartja puhán és formában a szőrzetet</li>
+                <li>Fésüld át naponta egyszer, hogy ne gubancolódjon össze</li>
+                <li>Időnként vágd meg a kilógó szálakat, hogy a forma mindig tiszta maradjon</li>
+                <li>Figyelj a bőr hidratálására – egy egészséges bőr egészséges szakállt jelent</li>
+                <li>Kerüld az olcsó, alkoholtartalmú termékeket – kiszárítják a bőrt és a szőrzetet</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>Az otthoni ápolás nem helyettesíti a profi borbélyt – de meghosszabbítja az eredményt. A kettő együtt adja a legjobb, legtartósabb hatást.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="bosphorus">
+              <h2>Miért válaszd a Bosphorust?</h2>
+
+              <p>
+                A Bosphorus barber shop nem csak hajvágásról szól – itt a férfi stílus minden részlete számít. A szakálligazítás náluk nem csupán szolgáltatás, hanem élmény: a borbélyok figyelnek a trendekre, a személyes stílusodra, és minden vendéget a lehető legjobb eredménnyel küldenek ki az ajtón.
+              </p>
+
+              <p>
+                A belvárosban, könnyen megközelíthető helyen, profi eszközökkel és tapasztalt szakemberekkel várnak – legyen szó az első szakálligazításodról vagy egy rendszeres karbantartásról.
+              </p>
+
+              <ul class="feature-list">
+                <li>Személyre szabott szakállformázás minden alkalommal</li>
+                <li>Tapasztalt borbélyok, akik ismerik a legújabb trendeket</li>
+                <li>Prémium ápolószerek és profi eszközök</li>
+                <li>Kellemes, letisztult barber shop hangulat a belvárosban</li>
+              </ul>
+            </section>
+
+            <section class="final-cta">
+              <h2>Foglalj időpontot – és tapasztald meg a különbséget</h2>
+              <p>
+                A szakálligazítás nem csupán ápolás, hanem a férfi stílus egyik legfontosabb eleme. Ha szeretnéd, hogy a szakállad mindig rendezett, harmonikus és stílusos legyen – foglalj most időpontot a Bosphorus barber shopba.
+              </p>
+              <div class="final-cta__actions">
+                <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="https://www.bosphorus.hu/ferfi/kapcsolat/" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#miert-fontos">Miért barber shopban?</a></li>
+                <li><a href="#lepesek">Formázás lépésről lépésre</a></li>
+                <li><a href="#tippek">Otthoni ápolási tippek</a></li>
+                <li><a href="#bosphorus">Miért válassz Bosphorust?</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Profi szakálligazítás, személyre szabott stílus – foglalj most és érezd a különbséget.
+              </p>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Bosphorus barber shop – szakálligazítás, férfi hajvágás és profi grooming Budapesten.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
