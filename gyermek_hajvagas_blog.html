@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gyermek hajvágás – hogyan tedd kellemessé az első és minden további alkalmat?</title>
+  <meta
+    name="description"
+    content="Gyermek hajvágás Budapesten – tippek az első fodrászlátogatástól a rendszeres karbantartásig. Tudd meg, hogyan tedd stresszmentessé a hajvágást a gyermekednek."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 0; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("gyerek_hero.jpg") center center / cover no-repeat;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 5vw, 74px); }
+    h2 { font-size: clamp(34px, 3vw, 48px); }
+    h3 { font-size: 24px; margin: 28px 0 8px; }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn--light { background: var(--white); color: var(--dark); border: 1px solid var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.32); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .blog-shell { padding: 24px 0 96px; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content { min-width: 0; }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .section p { margin: 0 0 18px; font-size: 17px; color: #2b2724; }
+    .section-intro { max-width: 760px; font-size: 18px; color: var(--muted); }
+
+    .section-image {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin: 0 0 28px;
+    }
+
+    .editorial-note {
+      margin: 26px 0 18px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .feature-list, .simple-list, .toc { padding-left: 22px; }
+    .feature-list li, .simple-list li, .toc li { margin-bottom: 8px; }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .tip-card {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .tip-card h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .tip-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .sidebar { position: sticky; top: 28px; display: grid; gap: 18px; }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 { font-size: 26px; margin: 0 0 14px; }
+
+    .toc { margin: 0; display: grid; gap: 10px; }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover { color: var(--text); transform: translateX(2px); }
+
+    .sidebar-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 16px; color: var(--white); }
+    .final-cta p { max-width: 760px; margin: 0 0 24px; color: rgba(255,255,255,0.78); font-size: 17px; }
+    .final-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-main { min-height: 100svh; }
+      .hero-content { padding: 28px; }
+      .final-cta { border-radius: 22px; padding: 26px; }
+      .section-image { height: 260px; }
+      .tips-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 38px; }
+      .hero-lead, .section p, .section-intro { font-size: 16px; }
+      .btn, .sidebar-cta { width: 100%; }
+      .hero-actions, .final-cta__actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <div class="eyebrow">Gyermek hajvágás • fodrászat • Budapest</div>
+            <h1>Gyermek hajvágás – hogyan tedd kellemessé minden alkalmat?</h1>
+            <p class="hero-lead">
+              A gyerekek hajvágása nem mindig egyszerű feladat – de a megfelelő környezetben, türelmes és tapasztalt fodrász kezei között egészen más élménnyé válhat. Mutatjuk, mire figyelj, és hogyan készítsd fel a gyermeked.
+            </p>
+            <div class="hero-actions">
+              <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--ghost">Időpontfoglalás</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section fade-up" id="elso-alkalom">
+              <h2>Az első gyermek hajvágás – mit várj?</h2>
+
+              <p class="section-intro">
+                Az első fodrászlátogatás sok gyereknek és szülőnek egyaránt izgalmas pillanat. Az ideges kisgyerek, az ismeretlen hangok és a mozdulatlanság kényszere mind hozzájárulhatnak a stresszhez – de a jó hír az, hogy néhány egyszerű fogással ez az élmény sokkal kellemesebbre fordítható.
+              </p>
+
+              <p>
+                A legfontosabb, hogy már otthon előkészítsd a gyerekedet. Mesélj neki arról, mi fog történni, esetleg mutass képeket, játsszátok el fodrászt – ezek a kis előkészületek sokat segítenek abban, hogy a szalonban ne érje váratlanul semmi.
+              </p>
+
+              <p>
+                Az első gyermek hajvágásnál válassz olyan fodrászatot, ahol türelmesek, nem sietnek, és ahol a kisgyerekek jól érzik magukat. Egy barátságos légkör és egy tapasztalt fodrász csodákat tehet.
+              </p>
+
+              <div class="editorial-note">
+                <strong>Az első jó fodrászélmény meghatározza, hogyan viszonyul a gyereked a hajvágáshoz az elkövetkező években. Érdemes ezt komolyan venni.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="tippek">
+              <img
+                src="gyerek1.jpg"
+                alt="Gyermek hajvágás fodrászatnál"
+                class="section-image"
+              />
+
+              <h2>Tippek a sikeres gyermek hajvágáshoz</h2>
+
+              <p>
+                Néhány apró trükk sokat számít, ha gyerekkel mész fodrászatba. Ezek nem bonyolult fogások – inkább olyan szokások, amelyeket érdemes kialakítani már az első alkalomtól.
+              </p>
+
+              <div class="tips-grid">
+                <div class="tip-card">
+                  <h3>Válassz jó időpontot</h3>
+                  <p>Ne fáradt vagy éhes gyerekkel menj – a délelőtti, kipihent időszak általában a legjobb.</p>
+                </div>
+                <div class="tip-card">
+                  <h3>Hozz kedvenc tárgyat</h3>
+                  <p>Egy kedvenc játék vagy könyv elvonhatja a figyelmet és megnyugtathatja a gyereket.</p>
+                </div>
+                <div class="tip-card">
+                  <h3>Maradj nyugodt</h3>
+                  <p>A gyerekek átveszik a szülő hangulatát – ha te nyugodt vagy, ő is könnyebben megnyugszik.</p>
+                </div>
+                <div class="tip-card">
+                  <h3>Dicsérj és jutalmazz</h3>
+                  <p>Egy kis jutalom a hajvágás után pozitív emléket hoz létre, és legközelebb szívesebben jön.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="gyakorisag">
+              <img
+                src="gyerek2.webp"
+                alt="Profi fodrász gyermek hajvágás közben"
+                class="section-image"
+              />
+
+              <h2>Milyen gyakran kell gyermek hajvágásra menni?</h2>
+
+              <p>
+                Ez nagyban függ a gyerek hajtípusától és a viselt frizura hosszától. Általánosságban elmondható, hogy a rendszeres vágás egészségesebb és könnyebben kezelhető hajat eredményez – és a gyerek is hamarabb megszokja a fodrászlátogatást.
+              </p>
+
+              <ul class="simple-list">
+                <li>Rövid fiú frizura: 4–6 hetente ajánlott</li>
+                <li>Közepes hosszúság: 6–8 hetente</li>
+                <li>Hosszú haj: 8–12 hetente, de a végek rendszeres igazítása fontos</li>
+                <li>Göndör vagy hullámos haj: az egyéni növekedési ütem alapján</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>A rendszeres gyermek hajvágás nem csak az esztétika miatt fontos – segít a haj egészséges növekedésében és a napi ápolás megkönnyítésében is.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="stilusok">
+              <h2>Népszerű gyermek frizurák</h2>
+
+              <p>
+                A gyerek frizuráknak is megvannak a saját trendjei – de a legfontosabb szempont mindig az, hogy könnyen kezelhető és a gyerek személyiségéhez illő legyen. Néhány örökzöld és divatos választás:
+              </p>
+
+              <ul class="feature-list">
+                <li><strong>Klasszikus oldalsó elválasztás</strong> – rendezett, elegáns, könnyű fenntartani</li>
+                <li><strong>Textúrált crop</strong> – modern és laza, kevés igazítást igényel</li>
+                <li><strong>Rövid gépi vágás</strong> – praktikus és friss, különösen nyáron ideális</li>
+                <li><strong>Természetes göndör frizura</strong> – a természetes textúrát kiemelő, minimális formázással</li>
+                <li><strong>Undercut</strong> – oldalán rövidebb, tetején hosszabb – karakteres és trendi választás</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="bosphorus">
+              <h2>Miért válaszd a Bosphorust gyermek hajvágáshoz?</h2>
+
+              <p>
+                A Bosphorus fodrászatban a gyermek hajvágás ugyanolyan figyelmet és gondosságot kap, mint a felnőtt vendégek kezelése. A fodrászok türelmesek, tapasztaltak, és pontosan tudják, hogyan kell egy kisgyerekkel bánni a szalonban.
+              </p>
+
+              <p>
+                A hangulat nyugodt és barátságos – nincs felesleges zsúfoltság, nincs sietség. Ez különösen fontos az első hajvágásnál, ahol a légkör legalább annyit számít, mint maga a vágás minősége.
+              </p>
+
+              <ul class="feature-list">
+                <li>Türelmes, tapasztalt fodrászok</li>
+                <li>Barátságos, megnyugtató szalon légkör</li>
+                <li>Személyre szabott gyermek frizurák</li>
+                <li>Könnyen elérhető helyszín Budapest belvárosában</li>
+              </ul>
+            </section>
+
+            <section class="final-cta">
+              <h2>Foglalj időpontot a gyermekednek</h2>
+              <p>
+                Legyen szó az első hajvágásról vagy egy rutinlátogatásról – a Bosphorus fodrászatban minden gyermek vendég különleges figyelmet kap. Foglalj most, és tedd te is kellemessé ezt az élményt.
+              </p>
+              <div class="final-cta__actions">
+                <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="https://www.bosphorus.hu/ferfi/kapcsolat/" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#elso-alkalom">Az első hajvágás</a></li>
+                <li><a href="#tippek">Tippek a sikeres vágáshoz</a></li>
+                <li><a href="#gyakorisag">Milyen gyakran érdemes?</a></li>
+                <li><a href="#stilusok">Népszerű gyermek frizurák</a></li>
+                <li><a href="#bosphorus">Miért a Bosphorus?</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Türelmes fodrász, barátságos hangulat – foglalj időpontot a gyermekednek.
+              </p>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Bosphorus fodrászat – gyermek hajvágás, férfi hajvágás és szakálligazítás Budapesten.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
