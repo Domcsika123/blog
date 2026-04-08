@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gépi hajvágás Budapesten – profi fade és buzz cut barber shopban</title>
+  <meta
+    name="description"
+    content="Gépi hajvágás Budapesten, a 7. kerületben – skin fade, taper fade, buzz cut és modern gépi stílusok profi barber kezektől. Bosphorus barber shop a Dob utca közelében."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 0; }
+
+    .hero-grid { display: grid; grid-template-columns: 1fr; }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 5vw, 74px); }
+    h2 { font-size: clamp(34px, 3vw, 48px); }
+    h3 { font-size: 24px; margin: 28px 0 8px; }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn--light { background: var(--white); color: var(--dark); border: 1px solid var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.32); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .blog-shell { padding: 24px 0 96px; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content { min-width: 0; }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .section p { margin: 0 0 18px; font-size: 17px; color: #2b2724; }
+    .section-intro { max-width: 760px; font-size: 18px; color: var(--muted); }
+
+    .section-image {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin: 0 0 28px;
+    }
+
+    .editorial-note {
+      margin: 26px 0 18px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .style-card {
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .style-card h3 {
+      font-size: 20px;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+
+    .style-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .feature-list, .simple-list, .toc { padding-left: 22px; }
+    .feature-list li, .simple-list li, .toc li { margin-bottom: 8px; }
+
+    .sidebar { position: sticky; top: 28px; display: grid; gap: 18px; }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 { font-size: 26px; margin: 0 0 14px; }
+
+    .toc { margin: 0; display: grid; gap: 10px; }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover { color: var(--text); transform: translateX(2px); }
+
+    .sidebar-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 16px; color: var(--white); }
+    .final-cta p { max-width: 760px; margin: 0 0 24px; color: rgba(255,255,255,0.78); font-size: 17px; }
+    .final-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-main { min-height: 100svh; }
+      .hero-content { padding: 28px; }
+      .final-cta { border-radius: 22px; padding: 26px; }
+      .section-image { height: 260px; }
+      .style-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 38px; }
+      .hero-lead, .section p, .section-intro { font-size: 16px; }
+      .btn, .sidebar-cta { width: 100%; }
+      .hero-actions, .final-cta__actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <div class="eyebrow">Gépi hajvágás • barber shop • Budapest 7. kerület</div>
+            <h1>Gépi hajvágás Budapesten – precíz fade és modern stílusok profi barber kézből</h1>
+            <p class="hero-lead">
+              A gépi hajvágás ma már messze nem csak egy egyszerű rövidítés. A skin fade, a taper fade és a buzz cut mind olyan technikák, amelyek profi barber kezei között válnak igazán különlegessé – és ezeket ma már Budapest szívében, a 7. kerületben is eléred.
+            </p>
+            <div class="hero-actions">
+              <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--ghost">Időpontfoglalás</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section fade-up" id="mi-az">
+              <h2>Mi az a gépi hajvágás – és miért nem mindegy, ki csinálja?</h2>
+
+              <p class="section-intro">
+                A gépi hajvágás a legnépszerűbb férfi fodrászati technika – mégis rengeteg különbség van aközött, amit egy átlagos fodrász és egy profi barber nyújt. Nem csak a végeredményen látszik meg, hanem azon is, hogy az elvégzett vágás mennyire marad rendezett két látogatás között.
+              </p>
+
+              <p>
+                Egy tapasztalt barber a gépet nem mechanikusan használja, hanem eszközként – a kézügyesség, a szem és az évek tapasztalata együtt adja azt a precizitást, ami miatt egy jól sikerült gépi vágás hetekig tisztán tartja a formát. Ez az, amit Budapesten a legjobb barber shopokban megkaphatsz.
+              </p>
+
+
+              <div class="editorial-note">
+                <strong>Egy profi barber shopban a gépi hajvágás nem percek alatt zajlik le – hanem annyi idő alatt, amennyi a tökéletes eredményhez kell.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="stilusok">
+              <img
+                src="gep1.jpg"
+                alt="Modern gépi hajvágás stílusok barber shopban"
+                class="section-image"
+              />
+
+              <h2>A legnépszerűbb gépi hajvágás stílusok</h2>
+
+              <p>
+                A gépi technika rendkívül sokféle frizurát tesz lehetővé – a lecsupaszított buzz cuttől a lágy, fokozatos taper fade-ig. Nézzük, melyek a legkeresettebb stílusok ma Budapesten.
+              </p>
+
+              <div class="style-grid">
+                <div class="style-card">
+                  <h3>Skin fade</h3>
+                  <p>A bőrig lecsupaszított oldal fokozatosan megy át a hosszabb tetőrészbe. Éles, modern, rendkívül tiszta hatású vágás.</p>
+                </div>
+                <div class="style-card">
+                  <h3>Taper fade</h3>
+                  <p>Lágyabb átmenet, amely természetesebb összhatást ad. Elegánsabb alkalmakra is tökéletesen hordható.</p>
+                </div>
+                <div class="style-card">
+                  <h3>High fade</h3>
+                  <p>Magasan kezdődő, drámai átmenet – karakteres, határozott stílus azoknak, akik nem félnek feltűnőbbnek lenni.</p>
+                </div>
+                <div class="style-card">
+                  <h3>Buzz cut</h3>
+                  <p>A legtisztább és legpraktikusabb gépi vágás. Egyenletes hossz az egész fejen – egyszerű, maszkulin és mindig rendezett.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="barber-7ker">
+              <img
+                src="gep2.jpg"
+                alt="Barber shop Budapest 7. kerület"
+                class="section-image"
+              />
+
+              <h2>Gépi hajvágás a 7. kerületben – barber shop a Blaha közelében</h2>
+
+              <p>
+                Sokan azt hiszik, hogy a gépi hajvágás egyszerű – elvégre csak egy gép, néhány fésű és kész. A valóság ennél jóval összetettebb. A profi borbélyok különböző géptípusokat, pengeszélességeket és kiegészítőket használnak attól függően, hogy milyen hajtípuson, milyen stíluson dolgoznak. Egy skin fade például egészen más gépet és technikát igényel, mint egy buzz cut.
+              </p>
+
+              <p>
+                A legtöbb otthoni gépi vágás éppen itt bukik meg: nem a szándék hiányzik, hanem az eszköz és a kézügyesség. A tükörből nem látszik a tarkó, az átmenetek egyenetlenek maradnak, a körvonal nem szimmetrikus. Egy barber shopban – legyen az a Dob utcában, a Kertész utcában, a Klauzál utcában vagy a Király utcában – ezek a problémák nem léteznek. A barber látja az egészet, és pontosan tudja, hogyan kell a gépet mozgatni, hogy az átmenet tökéletes legyen.
+              </p>
+
+              <ul class="simple-list">
+                <li>Különböző pengeszélességek más-más hatást adnak</li>
+                <li>A hajtípus meghatározza, melyik technika működik</li>
+                <li>Az egyenletes átmenet csak megfelelő szögből és kézzel kivitelezhető</li>
+                <li>A körvonal kialakítása a gépi vágás leglátványosabb, de legnehezebb része</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="gyakorisag">
+              <h2>Milyen gyakran érdemes visszajárni gépi vágásra?</h2>
+
+              <p>
+                A gépi vágásoknak, különösen a fade technikáknak, az a sajátossága, hogy viszonylag gyorsan kilátszik a növekedés – ez egyben a stílus egyik legfontosabb jellemzője is. A tiszta, friss hatás megtartásához rendszeres visszajárás szükséges.
+              </p>
+
+              <ul class="simple-list">
+                <li>Skin fade és high fade: 2–3 hetente ajánlott</li>
+                <li>Taper fade: 3–4 hetente</li>
+                <li>Buzz cut: 2–4 hetente, az egyéni növekedési ütemtől függően</li>
+                <li>Kombinált gépi + ollós vágás: 4–5 hetente</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>Az előre foglalt, visszatérő időpont a legjobb megoldás – így sosem csúszol el, és a megjelenésed mindig friss és rendezett marad.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="miert-bosphorus">
+              <h2>Miért válaszd a Bosphorust gépi hajvágáshoz Budapesten?</h2>
+
+              <p>
+                A Bosphorus barber shop pontosan az, amit egy igényes férfi elvár egy profi barber shoptól Budapesten: személyes odafigyelés, tapasztalt borbélyok és egy olyan légkör, ahol sosem érzed magad siettetett ügyfélnek.
+              </p>
+
+              <p>
+                Ha barber Budapest keresésre indulsz, és a 7. kerületben keresel minőségi gépi hajvágást – legyen szó skin fade-ről, buzz cutről vagy taper fade-ről – a Bosphorus az egyik legjobb választás a Blaha, Erzsébet körút, Király utca és Klauzál utca környékén.
+              </p>
+
+              <ul class="feature-list">
+                <li>Tapasztalt barber shop, profi gépi technikákkal</li>
+                <li>Barber Budapest 7. kerület – könnyen megközelíthető helyszín</li>
+                <li>Személyre szabott stílus, konzultációval</li>
+                <li>Szakálligazítás és teljes férfi grooming is elérhető</li>
+              </ul>
+            </section>
+
+            <section class="final-cta">
+              <h2>Foglalj időpontot gépi hajvágásra Budapesten</h2>
+              <p>
+                Profi skin fade, taper fade vagy buzz cut – a Bosphorus barber shopban minden gépi hajvágás precíz, személyre szabott és tartós eredményt hoz. Foglalj most, és tapasztald meg a különbséget.
+              </p>
+              <div class="final-cta__actions">
+                <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="https://www.bosphorus.hu/ferfi/kapcsolat/" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#mi-az">Mi az a gépi hajvágás?</a></li>
+                <li><a href="#stilusok">Legnépszerűbb stílusok</a></li>
+                <li><a href="#barber-7ker">Barber a 7. kerületben</a></li>
+                <li><a href="#gyakorisag">Milyen gyakran érdemes?</a></li>
+                <li><a href="#miert-bosphorus">Miért a Bosphorus?</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Skin fade, taper fade, buzz cut – profi gépi hajvágás Budapesten, a 7. kerületben.
+              </p>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Bosphorus barber shop – gépi hajvágás, skin fade és profi barber szolgáltatások Budapest 7. kerületében.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
