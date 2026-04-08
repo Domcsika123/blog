@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barber shop – miért válaszd a modern férfi fodrászatot?</title>
+  <meta
+    name="description"
+    content="Barber shop Budapest – férfi hajvágás, szakáll igazítás, klasszikus borotválás és profi férfi grooming egy helyen. Tudj meg mindent a modern barber shop szolgáltatásokról."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 0; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("blog1_hero.jpg") center center / cover no-repeat;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 5vw, 74px); }
+    h2 { font-size: clamp(34px, 3vw, 48px); }
+    h3 { font-size: 28px; }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn--light { background: var(--white); color: var(--dark); border: 1px solid var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.32); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .hero-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .side-card {
+      border-radius: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .side-card--image {
+      background: url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80") center center / cover no-repeat;
+      min-height: 320px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .side-card--content {
+      padding: 34px 30px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .side-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .side-card--content h2 { font-size: clamp(28px, 3vw, 42px); margin-bottom: 0; }
+    .side-card--content p { margin: 0; color: var(--muted); font-size: 16px; }
+
+    .key-points { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+
+    .key-points li {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .key-points li:first-child { border-top: 0; padding-top: 0; }
+
+    .blog-shell { padding: 24px 0 96px; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content { min-width: 0; }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+
+    .section p { margin: 0 0 18px; font-size: 17px; color: #2b2724; }
+
+    .section-intro { max-width: 760px; font-size: 18px; color: var(--muted); }
+
+    .section-image {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin: 0 0 28px;
+      background: #f7f1e9;
+    }
+
+    .editorial-note {
+      margin: 26px 0 4px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .feature-list, .simple-list, .toc { padding-left: 22px; }
+
+    .feature-list li, .simple-list li, .key-points li, .toc li { margin-bottom: 8px; }
+
+    .sidebar { position: sticky; top: 28px; display: grid; gap: 18px; }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 { font-size: 26px; margin-bottom: 14px; }
+
+    .toc { margin: 0; display: grid; gap: 10px; }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover { color: var(--text); transform: translateX(2px); }
+
+    .sidebar-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 16px; color: var(--white); }
+
+    .final-cta p { max-width: 760px; margin: 0 0 24px; color: rgba(255,255,255,0.78); font-size: 17px; }
+
+    .final-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    @media (max-width: 1080px) {
+      .hero-grid, .blog-grid, .hero-side { grid-template-columns: 1fr; }
+      .side-card--image { min-height: 300px; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-grid { gap: 0; }
+      .hero-main { min-height: 100svh; border-radius: 0; width: 100%; }
+      .hero-content { padding: 28px; }
+      .final-cta { border-radius: 22px; padding: 26px; }
+      .section-image { height: 300px; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding-top: 18px; }
+      h1 { font-size: 38px; }
+      .hero-lead, .section p, .section-intro { font-size: 16px; }
+      .btn, .sidebar-cta { width: 100%; }
+      .hero-actions, .final-cta__actions { flex-direction: column; }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <div class="eyebrow">Barber shop • férfi hajvágás • Budapest</div>
+            <h1>Barber shop – miért válaszd a modern férfi fodrászatot?</h1>
+            <p class="hero-lead">
+              A barber shopok egyre népszerűbbek azok körében, akik igényes férfi hajvágást, precíz szakálligazítást és profi borotválást keresnek. Egy modern barber shop nem csupán fodrászat – hanem egy olyan hely, ahol a férfi stílus és a részletek kerülnek a középpontba.
+            </p>
+            <div class="hero-actions">
+              <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--ghost">Időpontfoglalás</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section fade-up" id="mi-az">
+              <h2>Mi az a barber shop?</h2>
+
+              <p class="section-intro">
+                A barber shop egy kifejezetten férfiakra specializálódott fodrászat, ahol a borbélyok szakértői a férfi hajvágásnak és a szakállformázásnak. Legyen szó klasszikus hajvágásról, modern fade stílusról vagy teljes szakálligazításról – egy tapasztalt barber segít megtalálni a hozzád illő megjelenést.
+              </p>
+
+              <p>
+                A hagyományos borbélyüzletek már évszázadok óta a férfi gondozás helyszínei. A modern barber shop ezt a klasszikus szemléletet ötvözi a mai technikákkal: precíz géphasználat, egyenes borotvás vágás, professzionális szakállformázás és személyre szabott konzultáció egyetlen helyen.
+              </p>
+
+              <div class="editorial-note">
+                <strong>Egy profi barber shop nem csupán hajvágást kínál – hanem egy teljes férfi grooming élményt, ahol minden részletre odafigyelnek.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="miert-valaszd">
+              <img
+                src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80"
+                alt="Profi borbély férfi hajvágás közben barber shopban"
+                class="section-image"
+              />
+
+              <h2>Miért válaszd a barber shopot?</h2>
+
+              <p>
+                Egy barber shop legnagyobb előnye, hogy nem egy gyors hajvágást kapsz, hanem személyre szabott szolgáltatást. A borbély figyelembe veszi az arcformádat, hajtípusodat és stílusodat, így a végeredmény mindig igényes és tartós.
+              </p>
+
+              <p>
+                A barber shopok emellett letisztult, férfias hangulatukról is ismertek: profi eszközök, precíz munkavégzés és egy olyan légkör, ahol valóban a vendégre figyelnek. Ez az, amit egy átlagos fodrászatnál nem mindig kapsz meg.
+              </p>
+
+              <ul class="feature-list">
+                <li>Személyre szabott férfi hajvágás és szakálligazítás</li>
+                <li>Konzultáció minden vágás előtt</li>
+                <li>Profi, borbélyokra specializált eszközök</li>
+                <li>Következetes, megbízható eredmény</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="szolgaltatasok">
+              <h2>Milyen szolgáltatások érhetők el egy barber shopban?</h2>
+
+              <p>
+                Egy profi barber shopban jóval több lehetőség közül választhatsz, mint egy hagyományos fodrászatnál. A borbélyok nemcsak a hajvágásban, hanem a szakáll minden aspektusában is képzett szakemberek.
+              </p>
+
+              <ul class="simple-list">
+                <li>Férfi hajvágás – klasszikus és modern stílusok egyaránt</li>
+                <li>Fade hajvágás – skin fade, taper fade, high fade</li>
+                <li>Szakálligazítás és precíz kontúrvágás</li>
+                <li>Klasszikus egyenes borotvás borotválás</li>
+                <li>Gépi hajvágás és formázás</li>
+                <li>Hajfestés és szakállfestés</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>A legjobb barber shopokban minden szolgáltatás mögött évek tapasztalata és tudatos szakmai fejlődés áll – nem csak egy gép és egy szék.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="kinek-ajanlott">
+              <img
+                src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80"
+                alt="Igényes férfi megjelenés barber shop után"
+                class="section-image"
+              />
+
+              <h2>Kinek ajánlott a barber shop?</h2>
+
+              <p>
+                Sokan azt gondolják, hogy a barber shop csak a „divatos frizurásoknak" szól – ez azonban tévedés. A barber shop ideális választás minden olyan férfinak, aki tudatosan szeretné kezelni a megjelenését, és fontosnak tartja, hogy rendezetten nézzen ki a hétköznapokban is.
+              </p>
+
+              <ul class="feature-list">
+                <li>Igényes férfi hajvágást keres, nem csak egy gyors nyírást</li>
+                <li>Fontos számára a rendezett, jól formázott szakáll</li>
+                <li>Modern vagy klasszikus férfi frizurát szeretne</li>
+                <li>Profi borbély kezei közé szeretne kerülni</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="osszegzes">
+              <h2>Összegzés – a barber shop több mint egy hajvágás</h2>
+
+              <p>
+                Egy barber shop tökéletes választás, ha nem csak egy egyszerű hajvágást szeretnél, hanem egy komplett férfi grooming élményt. A profi borbélyok, a modern technikák és a személyre szabott szolgáltatások garantálják, hogy mindig a legjobb formádat hozd.
+              </p>
+
+              <p>
+                Akár klasszikus stílust, akár modern fade-et vagy precíz szakálligazítást keresel – egy jó barber shopban mindent megtalálsz. A különbség azonnal látszik: rendezettebb megjelenés, magabiztosabb kisugárzás és egy fodrász, akihez szívesen visszamész.
+              </p>
+            </section>
+
+            <section class="final-cta">
+              <h2>Foglalj időpontot a barber shopba</h2>
+              <p>
+                Tapasztald meg te is, mit jelent egy igazán profi férfi grooming élmény. Precíz hajvágás, gondos szakálligazítás és egy borbély, aki tényleg odafigyel – foglalj most, és érezd a különbséget.
+              </p>
+              <div class="final-cta__actions">
+                <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="/kapcsolat" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#mi-az">Mi az a barber shop?</a></li>
+                <li><a href="#miert-valaszd">Miért válaszd?</a></li>
+                <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+                <li><a href="#kinek-ajanlott">Kinek ajánlott?</a></li>
+                <li><a href="#osszegzes">Összegzés</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Egy profi borbélynál töltött 45 perc hetekre meghatározza a megjelenésedet.
+              </p>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Profi barber shop szolgáltatások. Precíz férfi hajvágás és szakálligazítás Budapesten.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
