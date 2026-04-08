@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klasszikus borotválás – egyenes borotvás borotválás barber shopban</title>
+  <meta
+    name="description"
+    content="Klasszikus egyenes borotvás borotválás Budapesten – profi barber shop élmény, sima bőr és precíz kontúrok. Tudj meg mindent a hagyományos borotválásról a Bosphorusnál."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 0; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("borotva_hero.jpg") center center / cover no-repeat;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 5vw, 74px); }
+    h2 { font-size: clamp(34px, 3vw, 48px); }
+    h3 { font-size: 24px; margin: 28px 0 8px; }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn--light { background: var(--white); color: var(--dark); border: 1px solid var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.32); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .blog-shell { padding: 24px 0 96px; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content { min-width: 0; }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .section p { margin: 0 0 18px; font-size: 17px; color: #2b2724; }
+    .section-intro { max-width: 760px; font-size: 18px; color: var(--muted); }
+
+    .section-image {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin: 0 0 28px;
+    }
+
+    .editorial-note {
+      margin: 26px 0 18px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .steps li strong { display: block; font-size: 16px; margin-bottom: 4px; color: var(--text); }
+    .steps li span { font-size: 15px; color: var(--muted); }
+
+    .feature-list, .simple-list, .toc { padding-left: 22px; }
+    .feature-list li, .simple-list li, .toc li { margin-bottom: 8px; }
+
+    .sidebar { position: sticky; top: 28px; display: grid; gap: 18px; }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 { font-size: 26px; margin: 0 0 14px; }
+    .toc { margin: 0; display: grid; gap: 10px; }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover { color: var(--text); transform: translateX(2px); }
+
+    .sidebar-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 16px; color: var(--white); }
+    .final-cta p { max-width: 760px; margin: 0 0 24px; color: rgba(255,255,255,0.78); font-size: 17px; }
+    .final-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-main { min-height: 100svh; }
+      .hero-content { padding: 28px; }
+      .final-cta { border-radius: 22px; padding: 26px; }
+      .section-image { height: 260px; }
+    }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 38px; }
+      .hero-lead, .section p, .section-intro { font-size: 16px; }
+      .btn, .sidebar-cta { width: 100%; }
+      .hero-actions, .final-cta__actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <div class="eyebrow">Klasszikus borotválás • egyenes borotva • Bosphorus barber shop</div>
+            <h1>Klasszikus borotválás – az egyenes borotva élménye barber shopban</h1>
+            <p class="hero-lead">
+              Az egyenes borotvás borotválás a barber kultúra egyik legősibb és legfinomabb rituáléja. Sima bőr, precíz kontúrok és egy olyan élmény, amit egyetlen otthoni borotva sem tud nyújtani.
+            </p>
+            <div class="hero-actions">
+              <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--ghost">Időpontfoglalás</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section fade-up" id="mi-az">
+              <h2>Mi az az egyenes borotvás borotválás?</h2>
+
+              <p class="section-intro">
+                Az egyenes borotva – más néven klasszikus vagy nyílóborotva – a borotválás leghagyományosabb és legprecízebb eszköze. Évszázadokon át ez volt az egyetlen módszer a férfiak arcszőrzetének gondozására, és a modern barber shopokban ma is kiemelt helyet foglal el.
+              </p>
+
+              <p>
+                Egy jól megélezett egyenes borotvával a képzett borbély olyan simán és közelről tudja eltávolítani az arcszőrzetet, ahogy azt egyetlen betétes vagy elektromos borotva sem képes megközelíteni. Az eredmény nemcsak esztétikailag más – a bőr tapintása, a borotválkozás utáni frissesség és a tartósság is teljesen más szinten van.
+              </p>
+
+              <div class="editorial-note">
+                <strong>Az egyenes borotvás borotválás nem csupán szolgáltatás – hanem egy rituálé. Lassabb, gondosabb és sokkal élvezetesebb, mint amit otthon egyedül meg lehet csinálni.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="folyamat">
+              <img
+                src="borotva1.webp"
+                alt="Klasszikus egyenes borotvás borotválás barber shopban"
+                class="section-image"
+              />
+
+              <h2>Hogyan zajlik a klasszikus borotválás lépésről lépésre?</h2>
+
+              <p>
+                A profi barber shopban végzett egyenes borotvás borotválás egy jól felépített folyamat – nem csak a borotva odahúzásáról szól. Minden lépés a végeredményt és a bőr kíméletét szolgálja.
+              </p>
+
+              <ol class="steps">
+                <li>
+                  <div>
+                    <strong>Előkészítés – meleg törülköző</strong>
+                    <span>A meleg gőzös törülköző felpuhítja a bőrt és az arcszőrzetet, megnyitja a pórusokat – ez teszi lehetővé a valóban közeli, irritációmentes vágást.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Borotvakrém vagy szappan felvitele</strong>
+                    <span>Minőségi borotvakrém vagy hagyományos borotvakomp ecsettel felverve védi a bőrt és lehetővé teszi, hogy a borotva súrlódás nélkül csússzon.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Borotválás egyenes borotvával</strong>
+                    <span>A borbély a haj növekedési irányával megegyező, majd azzal ellentétes irányban is húz – ez adja a tökéletes simaságot precíz kontúrok mellett.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Hideg törülköző és aftershave</strong>
+                    <span>A hideg törülköző bezárja a pórusokat, az aftershave pedig megvédi és megnyugtatja a bőrt borotválkozás után.</span>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section class="section fade-up" id="elonyok">
+              <img
+                src="borotva2.jpg"
+                alt="Sima bőr egyenes borotválás után"
+                class="section-image"
+              />
+
+              <h2>Miért jobb az egyenes borotvás borotválás?</h2>
+
+              <p>
+                Sokan először óvatosan közelítenek az egyenes borotva gondolatához – de azok, akik egyszer kipróbálják egy profi borbélynál, ritkán térnek vissza a hagyományos betétes borotvához. Az okok egyértelműek.
+              </p>
+
+              <p>
+                Az egyenes borotva egyetlen, éles pengével dolgozik – nem nyom, nem húz, nem irritál. A többpengés patron-borotvák éppen azért okoznak bebenőtt szőröket és bőrpírt, mert az egymás utáni pengék a bőr alá húzzák, majd elvágják a szőrszálat. Ezzel szemben az egyenes borotva a felszínen, egyenletesen vágja el a szőrzetet.
+              </p>
+
+              <ul class="feature-list">
+                <li>Sokkal simább bőrfelület, mint betétes borotvával</li>
+                <li>Kevesebb bőrirritáció és bebenőtt szőr</li>
+                <li>Precízebb kontúrvágás a nyakvonalnál és az arcél mentén</li>
+                <li>Hosszabb ideig sima marad a bőr borotválkozás után</li>
+                <li>A bőr idővel megszokja – kevesebb érzékenység rendszeres borotválásnál</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="kinek">
+              <h2>Kinek ajánlott a klasszikus borotválás?</h2>
+
+              <p>
+                Az egyenes borotvás borotválás minden férfinak ajánlható – de különösen azoknak érdemes kipróbálni, akik rendszeresen küzdenek bőrirritációval, bebenőtt szőrökkel vagy akik egyszerűen valami különlegeset szeretnének a hétköznapi borotválkozás helyett.
+              </p>
+
+              <p>
+                Azoknak is ideális, akik a szakállukat igazíttatnák, de a nyakvonalat és az arcél mentén tisztán szeretnék tartani a bőrt. A klasszikus borotválás és a szakálligazítás kombinálva az egyik legteljesebb barber shop élményt adja.
+              </p>
+
+              <ul class="simple-list">
+                <li>Érzékeny, könnyen irritálódó bőrűeknek kifejezetten ajánlott</li>
+                <li>Bebenőtt szőröktől szenvedőknek tartós megoldást nyújthat</li>
+                <li>Különleges alkalmak előtt – esküvő, állásinterjú, fontos esemény</li>
+                <li>Mindenkinek, aki egyszer igazán különleges borotválkozási élményt szeretne</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>Az egyenes borotvás borotválás egyszerre a leghagyományosabb és a legmodernebb döntés, amit egy férfi a megjelenésével kapcsolatban hozhat.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="bosphorus">
+              <h2>Klasszikus borotválás a Bosphorus barber shopban</h2>
+
+              <p>
+                A Bosphorus barber shopban a klasszikus egyenes borotvás borotválás az egyik legkedveltebb szolgáltatás. A borbélyok pontosan tudják, hogyan kell a különböző bőrtípusokhoz és szőrzetsűrűségekhez igazítani a technikát – az eredmény mindig sima, irritációmentes és tartós.
+              </p>
+
+              <p>
+                A borotválás végezhető önállóan vagy hajvágással, szakálligazítással kombinálva is. Sokan éppen emiatt választják a Bosphorus barber shopot: egy látogatás alatt az egész megjelenés rendbe kerül – haj, szakáll és borotvált bőr egyszerre.
+              </p>
+
+              <ul class="feature-list">
+                <li>Egyenes borotvás borotválás tapasztalt borbélyoktól</li>
+                <li>Meleg törülközős előkészítés, minőségi borotvakrémmel</li>
+                <li>Kombinálható hajvágással és szakálligazítással</li>
+                <li>Budapest 7. kerületében, könnyen elérhető helyszínen</li>
+              </ul>
+            </section>
+
+            <section class="final-cta">
+              <h2>Foglalj időpontot klasszikus borotválásra</h2>
+              <p>
+                Tapasztald meg te is, miért tér vissza újra és újra mindenki az egyenes borotvás borotváláshoz. Sima bőr, precíz kontúrok és egy igazi barber shop élmény – foglalj most a Bosphorusba.
+              </p>
+              <div class="final-cta__actions">
+                <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="https://www.bosphorus.hu/ferfi/kapcsolat/" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#mi-az">Mi az egyenes borotválás?</a></li>
+                <li><a href="#folyamat">A borotválás folyamata</a></li>
+                <li><a href="#elonyok">Miért jobb?</a></li>
+                <li><a href="#kinek">Kinek ajánlott?</a></li>
+                <li><a href="#bosphorus">Bosphorus barber shop</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Klasszikus egyenes borotvás borotválás – egy élmény, amit egyszer mindenki kipróbál.
+              </p>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Bosphorus barber shop – klasszikus borotválás, férfi hajvágás és szakálligazítás Budapesten.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
