@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barber shop árak Budapest – mire számíthatsz 2026-ban?</title>
+  <meta
+    name="description"
+    content="Barber shop árak Budapesten – mennyibe kerül a férfi hajvágás, szakálligazítás, fade és borotválás 2026-ban? Átfogó áttekintés, hogy tudd, mit érdemes elvárni."
+  />
+  <style>
+    :root {
+      --bg: #f4f0ea;
+      --surface: #fbf8f4;
+      --text: #161412;
+      --muted: #6e665f;
+      --line: rgba(22, 20, 18, 0.1);
+      --accent: #8b6b46;
+      --dark: #11100f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow-soft: 0 18px 45px rgba(17, 16, 15, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 0; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; }
+
+    .hero-main {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(17,16,15,0.06), rgba(17,16,15,0.68)),
+        url("arak_hero.jpg") center center / cover no-repeat;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(17,16,15,0.14) 48%, rgba(17,16,15,0.80) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 46px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 5vw, 74px); }
+    h2 { font-size: clamp(34px, 3vw, 48px); }
+    h3 { font-size: 24px; margin: 28px 0 8px; }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.84);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn--light { background: var(--white); color: var(--dark); border: 1px solid var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.32); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .blog-shell { padding: 24px 0 96px; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .content { min-width: 0; }
+
+    .section {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid rgba(22,20,18,0.09);
+    }
+
+    .section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .section p { margin: 0 0 18px; font-size: 17px; color: #2b2724; }
+    .section-intro { max-width: 760px; font-size: 18px; color: var(--muted); }
+
+    .section-image {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      margin: 0 0 28px;
+    }
+
+    .editorial-note {
+      margin: 26px 0 18px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(139, 107, 70, 0.05);
+      color: #3d3732;
+      font-size: 16px;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 16px;
+    }
+
+    .price-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: var(--dark);
+      color: var(--white);
+      font-family: "Georgia", serif;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .price-table th:first-child { border-radius: 10px 0 0 0; }
+    .price-table th:last-child { border-radius: 0 10px 0 0; text-align: right; }
+
+    .price-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      color: #2b2724;
+    }
+
+    .price-table td:last-child { text-align: right; font-weight: 600; color: var(--accent); }
+
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table tr:nth-child(even) td { background: var(--surface); }
+
+    .feature-list, .simple-list, .toc { padding-left: 22px; }
+    .feature-list li, .simple-list li, .toc li { margin-bottom: 8px; }
+
+    .sidebar { position: sticky; top: 28px; display: grid; gap: 18px; }
+
+    .sidebar-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(251, 248, 244, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .sidebar-card h3 { font-size: 26px; margin: 0 0 14px; }
+    .toc { margin: 0; display: grid; gap: 10px; }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc a:hover { color: var(--text); transform: translateX(2px); }
+
+    .sidebar-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+
+    .sidebar-cta {
+      width: 100%;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+    }
+
+    .final-cta {
+      margin-top: 52px;
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .final-cta h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 16px; color: var(--white); }
+    .final-cta p { max-width: 760px; margin: 0 0 24px; color: rgba(255,255,255,0.78); font-size: 17px; }
+    .final-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-main { min-height: 100svh; }
+      .hero-content { padding: 28px; }
+      .final-cta { border-radius: 22px; padding: 26px; }
+      .section-image { height: 260px; }
+      .price-table { font-size: 14px; }
+      .price-table td, .price-table th { padding: 10px 12px; }
+    }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 38px; }
+      .hero-lead, .section p, .section-intro { font-size: 16px; }
+      .btn, .sidebar-cta { width: 100%; }
+      .hero-actions, .final-cta__actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <div class="eyebrow">Barber shop árak • Budapest • 2026</div>
+            <h1>Barber shop árak Budapest – mire számíthatsz 2026-ban?</h1>
+            <p class="hero-lead">
+              Ha barber shopot keresel Budapesten, az egyik első kérdés mindig az ár. Mennyibe kerül egy jó férfi hajvágás? Mi befolyásolja az árat? És megéri-e a különbség a drágább és az olcsóbb szalon között? Ebben a cikkben ezekre a kérdésekre válaszolunk.
+            </p>
+            <div class="hero-actions">
+              <a href="#blog-cikk" class="btn btn--light">Olvasd el a cikket</a>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--ghost">Időpontfoglalás</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-shell" id="blog-cikk">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="content">
+
+            <section class="section fade-up" id="attekintes">
+              <h2>Barber shop árak Budapesten – általános áttekintés</h2>
+
+              <p class="section-intro">
+                A budapesti barber shop árak széles skálán mozognak – az egyszerűbb, gyorsabb szalonoktól a prémium barber shopokig jelentős különbségek lehetnek. Ez nem véletlen: az ár tükrözi a borbély tapasztalatát, a szalon minőségét, a felhasznált termékeket és azt is, hogy mennyi időt és figyelmet fordítanak rád.
+              </p>
+
+              <p>
+                Általánosságban elmondható, hogy Budapesten 2026-ban egy alapszintű férfi hajvágás 4 000–6 000 forint között mozog egy hagyományos fodrászatnál. Egy prémium barber shopban, ahol konzultációval, precíz fade technikával és minőségi termékekkel dolgoznak, az árak jellemzően 7 000–14 000 forint között alakulnak – szolgáltatástól és szalontól függően.
+              </p>
+
+              <div class="editorial-note">
+                <strong>Az ár önmagában nem mondja meg, hogy jó-e egy barber shop. Egy olcsó vágás, amit kéthetente meg kell ismételni, hosszú távon többe kerülhet, mint egy drágább, de tartósabb munka.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="arak">
+              <img
+                src="arak1.jpg"
+                alt="Barber shop belső tér Budapesten"
+                class="section-image"
+              />
+
+              <h2>Tipikus barber shop árak szolgáltatásonként</h2>
+
+              <p>
+                Az alábbi táblázat tájékoztató jellegű – a tényleges árak szalononként és kerületenként eltérhetnek. A 7. kerületben, a Blaha Lujza tér, Dob utca, Király utca és Erzsébet körút környékén működő prémium barber shopokban az árak a magasabb kategóriához közelítenek.
+              </p>
+
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th>Szolgáltatás</th>
+                    <th>Átlagos ár (Bp.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Férfi hajvágás (alap)</td>
+                    <td>4 000 – 7 000 Ft</td>
+                  </tr>
+                  <tr>
+                    <td>Fade hajvágás (skin / taper / high fade)</td>
+                    <td>7 000 – 12 000 Ft</td>
+                  </tr>
+                  <tr>
+                    <td>Szakálligazítás</td>
+                    <td>3 000 – 6 000 Ft</td>
+                  </tr>
+                  <tr>
+                    <td>Hajvágás + szakálligazítás kombinált</td>
+                    <td>9 000 – 16 000 Ft</td>
+                  </tr>
+                  <tr>
+                    <td>Klasszikus egyenes borotvás borotválás</td>
+                    <td>5 000 – 9 000 Ft</td>
+                  </tr>
+                  <tr>
+                    <td>Gyermek hajvágás</td>
+                    <td>3 500 – 6 000 Ft</td>
+                  </tr>
+                  <tr>
+                    <td>Hajfestés / szürke lefedés</td>
+                    <td>8 000 – 18 000 Ft</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="section fade-up" id="mi-befolyasolja">
+              <img
+                src="arak2.jpg"
+                alt="Profi barber munka közben Budapesten"
+                class="section-image"
+                style="height: 460px; object-fit: cover; object-position: center;"
+              />
+
+              <h2>Mi befolyásolja a barber shop árakat?</h2>
+
+              <p>
+                Sokan meglepődnek, hogy ugyanazért a vágásért mennyire eltérő összegeket kérnek különböző szalonok. Ennek több oka is van – és ezeket érdemes érteni, mielőtt csak az ár alapján döntesz.
+              </p>
+
+              <ul class="simple-list">
+                <li><strong>A borbély tapasztalata és tudása</strong> – egy több éve gyakorló, képzett barber magasabb árat kér, és meg is éri</li>
+                <li><strong>A szalon elhelyezkedése</strong> – a belvárosi, 5–7. kerületi szalonok jellemzően drágábbak, mint a külső kerületiek</li>
+                <li><strong>Felhasznált termékek minősége</strong> – prémium borotvakrémek, hajápolók és festékek drágábbak, de jobbak a hajnak és a bőrnek</li>
+                <li><strong>A vágás komplexitása</strong> – egy egyszerű gépi vágás és egy részletes skin fade nem ugyanannyi munkát igényel</li>
+                <li><strong>Időráfordítás</strong> – ahol nem sietnek, ahol konzultáció is van, ott az ár ezt tükrözi</li>
+              </ul>
+
+              <div class="editorial-note">
+                <strong>Ha valahol feltűnően olcsó a vágás, érdemes utánanézni, miért. A leggyakoribb ok: kevesebb idő, kevésbé tapasztalt borbély, vagy alacsonyabb minőségű termékek.</strong>
+              </div>
+            </section>
+
+            <section class="section fade-up" id="megeri">
+              <h2>Megéri-e a drágább barber shop?</h2>
+
+              <p>
+                Ez az egyik legtöbbet feltett kérdés azok körében, akik most kezdik el komolyabban venni a megjelenésüket. A válasz az esetek nagy részében: igen – de nem feltétlenül a legdrágábbat kell választani.
+              </p>
+
+              <p>
+                A lényeg nem az, hogy mennyit fizetsz, hanem hogy mit kapsz érte. Egy 10 000 forintos fade, ami 3 hétig tartja a formáját, és amit szívesen megmutatsz másoknak, megéri. Egy 4 000 forintos vágás, ami után megnézed magad a tükörben és nyomban visszamennél – az sem olcsó, ha beleszámolod a bosszúságot és az elvesztegetett időt.
+              </p>
+
+              <ul class="feature-list">
+                <li>Tartósabb eredmény – kevesebb visszajárás ugyanolyan összegért</li>
+                <li>Konzultáció – megkapod azt a stílust, ami tényleg illik hozzád</li>
+                <li>Jobb termékek – egészségesebb haj és bőr hosszú távon</li>
+                <li>Kiszámítható minőség – tudod, mit vársz, és azt is kapod</li>
+              </ul>
+            </section>
+
+            <section class="section fade-up" id="bosphorus">
+              <h2>Barber shop árak a Bosphorusnál</h2>
+
+              <p>
+                A Bosphorus barber shop Budapesten, a 7. kerületben – a Dob utca, Kertész utca és Király utca közelében – prémium barber szolgáltatásokat kínál olyan áron, amely tükrözi a minőséget, de nem tartalmaz felesleges felárakat.
+              </p>
+
+              <p>
+                A pontos, aktuális árakat közvetlenül a Bosphorus weboldalán találod – az árak az elvégzett munka komplexitásától és az igénybe vett szolgáltatásoktól függnek. A legjobb megoldás: foglalj időpontot, és a borbély a konzultáció során pontosan megmondja, mire számíthatsz.
+              </p>
+
+              <ul class="feature-list">
+                <li>Átlátható árazás, előzetes konzultációval</li>
+                <li>Kombinált csomagok – hajvágás + szakálligazítás egyszerre</li>
+                <li>Prémium termékek az árban</li>
+                <li>Könnyen elérhető a 7. kerületben, Blaha közelében</li>
+              </ul>
+            </section>
+
+            <section class="final-cta">
+              <h2>Nézd meg az aktuális árakat és foglalj időpontot</h2>
+              <p>
+                Férfi hajvágás, fade, szakálligazítás vagy klasszikus borotválás – a Bosphorus barber shopban minden szolgáltatás átlátható áron, profi kivitelezéssel érhető el. Foglalj most, és tapasztald meg, miért érdemes a minőséget választani.
+              </p>
+              <div class="final-cta__actions">
+                <a href="https://www.bosphorus.hu/#foglalas" class="btn btn--light">Foglalj időpontot</a>
+                <a href="https://www.bosphorus.hu/ferfi/kapcsolat/" class="btn btn--ghost">Kapcsolat</a>
+              </div>
+            </section>
+
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Tartalom</h3>
+              <ul class="toc">
+                <li><a href="#attekintes">Árak áttekintése</a></li>
+                <li><a href="#arak">Árak szolgáltatásonként</a></li>
+                <li><a href="#mi-befolyasolja">Mi befolyásolja az árat?</a></li>
+                <li><a href="#megeri">Megéri a drágább?</a></li>
+                <li><a href="#bosphorus">Bosphorus árak</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Foglalás</h3>
+              <p class="sidebar-note">
+                Átlátható árak, prémium minőség – foglalj most a Bosphorus barber shopba.
+              </p>
+              <a href="https://www.bosphorus.hu/#foglalas" class="btn sidebar-cta">Foglalj most</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Bosphorus barber shop – férfi hajvágás, fade, szakálligazítás és borotválás Budapesten.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
